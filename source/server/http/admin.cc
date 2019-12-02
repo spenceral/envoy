@@ -553,6 +553,16 @@ void AdminImpl::writeDumpKeysAsJson(Envoy::Buffer::Instance& response) const {
   response.add(MessageUtil::getJsonStringFromMessage(keys, true)); // pretty-print
 }
 
+// Supported resources
+// bootstrap
+// listeners
+// clusters
+// routes
+// scopedroutes
+// secrets
+
+
+
 Http::Code AdminImpl::handlerConfigDump(absl::string_view url, Http::HeaderMap& response_headers,
                                         Buffer::Instance& response, AdminStream&) const {
   Http::Utility::QueryParams query_params = Http::Utility::parseQueryString(url);
